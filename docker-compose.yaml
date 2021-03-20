@@ -1,0 +1,19 @@
+version: '3.2'
+
+services:
+  core:
+    image: storjlabs/storagenode:latest
+    restart: unless-stopped
+    stop_grace_period: 300s
+    environment:
+      - WALLET="$WALLET"
+      - EMAIL="$EMAIL"
+      - ADDRESS="$ADDRESS"
+      - STORAGE="$STORAGE" 
+    container_name: storagenode
+    volumes:
+      - /mnt/storj/identity:/app/identity
+      - /mnt/storj/storage:/app/config
+    ports:
+      - 28967:28967
+      - 14002:14002

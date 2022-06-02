@@ -16,4 +16,5 @@ services:
       - /mnt/storj/storage:/app/config
     ports:
       - 28967:28967
+      - 28967:28967/udp
       - 14002:14002

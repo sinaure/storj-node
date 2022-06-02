@@ -12,6 +12,7 @@ docker pull storjlabs/storagenode:latest
 docker run -d --restart unless-stopped --stop-timeout 300 \
     -p 28967:28967 \
     -p 14002:14002 \
+    -p 28967:28967/udp \
     -e WALLET="$WALLET" \
     -e EMAIL="$EMAIL" \
     -e ADDRESS="$ADDRESS" \
